@@ -4,7 +4,7 @@ import pandas as pd
 
 import json
 
-with open('scraps/contentDetailsCA.json') as json_file:
+with open('scraps/contentDetailsMX.json') as json_file:
     data = json.load(json_file)
     print('video_id,duration')
     for vid50 in data:
