@@ -9,7 +9,7 @@ def chunks(l, n):
         yield l[i:i + n]
 
 key = 'AIzaSyD7aumbqlL9DbCOsh42wPLtZnDFIQzKTkc'
-videos = pd.read_csv('./data/USvideos.csv')
+videos = pd.read_csv('./data/CAvideos.csv')
 
 print('[')
 for i in chunks(videos['video_id'], 50):
