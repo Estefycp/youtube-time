@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
+    <head>
+         <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    </head>
+
+    <style>
+    .small-middle-container{
+        margin: auto;
+        width: 40%;
+    }
+    body {
+    background-color: #faebe8;
+    }
+
+    h1   {color: #cd201f;}
+            </style>
 
 <body>
-    <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="small-middle-container">
+         <h1 style="text-align:center">Youtube Time</h1>
         <form id="rendered-form">
-            <div class="rendered-form">
-                <div class="fb-select form-group field-select-1557103127417"><label for="select-1557103127417"
-                        class="fb-select-label">Select Category<span class="fb-required">*</span><span
+            <div class="rendered-form ">
+                <div class="fb-select form-group field-select-1557103127417  row"><label for="select-1557103127417"
+                        class="fb-select-label ">Select Category<span class="fb-required">*</span><span
                             class="tooltip-element"
                             tooltip="This is the categorie that your video will belong to ">?</span></label><select
-                        class="form-control" name="select-1557103127417" id="select-1557103127417" required="required"
+                        class="form-control btn-danger " name="select-1557103127417" id="select-1557103127417" required="required"
                         aria-required="true">
                         <option value="option-1" id="select-1557103127417-0">Film &amp; Animation</option>
                         <option value="option-2" id="select-1557103127417-1">Autos &amp; Vehicles</option>
@@ -44,12 +70,11 @@
                         <option value="option-31" id="select-1557103127417-30">Shows</option>
                         <option value="option-32" id="select-1557103127417-31">Trailers</option>
                     </select></div>
-                <div class="fb-select form-group field-select-1557104728295"><label for="select-1557104728295"
-                        class="fb-select-label">Select Region<span class="fb-required">*</span><span
-                            class="tooltip-element"
-                            tooltip="This is the categorie that your video will belong to ">?</span></label><select
-                        class="form-control" name="select-1557104728295" id="select-1557104728295" required="required"
-                        aria-required="true">
+                <div class="fb-select form-group field-select-1557104728295 row">
+                    <label for="select-1557104728295"
+                        class="fb-select-label">Select Region<span class="fb-required">*</span>
+                        <span class="tooltip-element" tooltip="This is the categorie that your video will belong to ">?</span>
+                    </label><select class="form-control btn-danger " name="select-1557104728295" id="select-1557104728295" required="required" aria-required="true">
                         <option value="US" id="select-1557104728295-0">United States</option>
                         <option value="CA" id="select-1557104728295-1">Candada</option>
                         <option value="DE" id="select-1557104728295-2">Alemania</option>
@@ -61,8 +86,8 @@
                         <option value="GB" id="select-1557104728295-8">Grecia</option>
                         <option value="IN" id="select-1557104728295-9">India</option>
                     </select></div>
-                <div class="fb-radio-group form-group field-radio-group-1557103310289"><label
-                        for="radio-group-1557103310289" class="fb-radio-group-label">Radio Group<span
+                <div class="fb-radio-group form-group field-radio-group-1557103310289 row "><label
+                        for="radio-group-1557103310289" class="fb-radio-group-label ">Radio Group<span
                             class="fb-required">*</span><span class="tooltip-element"
                             tooltip="Cuál es tu objetivo? ">?</span></label>
                     <div class="radio-group">
@@ -81,34 +106,21 @@
                     </div>
                 </div>
                 <div class="">
-                    <h1 id="control-4270250">Video Length</h1>
+                    <h2 id="control-4270250">Video Length</h2>
                 </div>
-                <div class="fb-number form-group field-number-1557105132142"><label for="number-1557105132142"
-                        class="fb-number-label">Hours<span class="fb-required">*</span></label><input type="number"
-                        placeholder="Hours" class="form-control" name="number-1557105132142" value="0" min="0" max="99"
+                <div class="col-md-3 fb-number form-group field-number-1557105132142 "><label for="number-1557105132142"
+                        class="fb-number-label ">Hours<span class="fb-required">*</span></label><input type="number"
+                        placeholder="Hours" class="form-control btn-danger" name="number-1557105132142" value="0" min="0" max="99"
                         id="number-1557105132142" required="required" aria-required="true"></div>
-                <div class="fb-number form-group field-number-1557105306098"><label for="number-1557105306098"
+                <div class=" col-md-3 fb-number form-group field-number-1557105306098"><label for="number-1557105306098"
                         class="fb-number-label">Minutes<span class="fb-required">*</span></label><input type="number"
-                        placeholder="Minutes" class="form-control" name="number-1557105306098" value="0" min="0"
+                        placeholder="Minutes" class="form-control btn-danger" name="number-1557105306098" value="0" min="0"
                         max="59" id="number-1557105306098" required="required" aria-required="true"></div>
-                <div class="fb-number form-group field-number-1557105342303"><label for="number-1557105342303"
+                <div class="col-md-3 fb-number form-group field-number-1557105342303"><label for="number-1557105342303"
                         class="fb-number-label">Seconds<span class="fb-required">*</span></label><input type="number"
-                        placeholder="Seconds" class="form-control" name="number-1557105342303" value="0" min="0"
+                        placeholder="Seconds" class="form-control btn-danger" name="number-1557105342303" value="0" min="0"
                         max="59" id="number-1557105342303" required="required" aria-required="true"></div>
-                <div class="fb-checkbox-group form-group field-checkbox-group-1557104317198"><label
-                        for="checkbox-group-1557104317198" class="fb-checkbox-group-label">Tags</label>
-                    <div class="checkbox-group">
-                        <div class="fb-checkbox-inline"><input name="checkbox-group-1557104317198[]"
-                                id="checkbox-group-1557104317198-0" value="tag-1" type="checkbox"
-                                checked="checked"><label for="checkbox-group-1557104317198-0">tag</label></div>
-                        <div class="fb-checkbox-inline"><input name="checkbox-group-1557104317198[]"
-                                id="checkbox-group-1557104317198-1" value="tag-2" type="checkbox"
-                                checked="checked"><label for="checkbox-group-1557104317198-1">tag2</label></div>
-                        <div class="fb-checkbox-inline"><input name="checkbox-group-1557104317198[]"
-                                id="checkbox-group-1557104317198-2" value="tag-3" type="checkbox"
-                                checked="checked"><label for="checkbox-group-1557104317198-2">tag3</label></div>
-                    </div>
-                </div>
+                        
             </div>
         </form>
     </div>
