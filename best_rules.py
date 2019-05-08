@@ -3,16 +3,18 @@
 import pandas as pd
 
 def maxrate(X, Y):
+    graph = []
     maxr = X.iloc[0]
     maxp = Y[0]
     for i in range(len(X)):
+        graph.append((str(X.iloc[i]['pub_hour']).zfill(2) + ':' + str(X.iloc[i]['pub_min']).zfill(2), Y[i]))
         if Y[i] > maxp:
             maxp = Y[i]
             maxr = X.iloc[i]
 
     # for index, row in Y.iterrows():
     #     result += str(row['pub_hour']) + ':' + str(row['pub_min']) + '\n'
-    return str(maxr['pub_hour']).zfill(2) + ':' + str(maxr['pub_min']).zfill(2) + '\n'
+    return str(maxr['pub_hour']).zfill(2) + ':' + str(maxr['pub_min']).zfill(2) + '\n', graph
 
 def minrate(X, Y):
     maxr = X.iloc[0]

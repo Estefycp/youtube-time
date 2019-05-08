@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <style>
@@ -138,16 +139,18 @@
                     <div class="col-md-3 fb-number form-group field-number-1557105132142 "><label for="number-update"
                             class="fb-number-label ">Month<span class="fb-required">*</span></label><input type="number"
                             placeholder="Month" class="form-control btn-danger" name="number-update" value="1" min="1"
-                            max="12" id="number-update" required="required" aria-required="true" id="number-update-txt"></div>
+                            max="12" id="number-update" required="required" aria-required="true" id="number-update-txt">
+                    </div>
                     <div class=" col-md-3 fb-number form-group field-number-1557105306098"><label for="number-upday"
                             class="fb-number-label">Day Number<span class="fb-required">*</span></label><input
                             type="number" placeholder="Day" class="form-control btn-danger" name="number-upday"
-                            value="1" min="1" max="31" id="number-upday" required="required" aria-required="true" id="number-upday-txt"></div>
+                            value="1" min="1" max="31" id="number-upday" required="required" aria-required="true"
+                            id="number-upday-txt"></div>
                 </div>
                 <form id="rendered-form">
                     <div class="rendered-form">
                         <div class="fb-button form-group field-submitbtn"><button type="submit" class="btn-danger btn"
-                                name="submitbtn" id="submitbtn" >Submit</button></div>
+                                name="submitbtn" id="submitbtn">Submit</button></div>
                     </div>
                 </form>
             </div>
@@ -155,6 +158,8 @@
         <h2 style="text-align:center" id="resulttime2"></h2>
         <br />
         <h1 style="text-align:center" id="resulttime"></h1>
+        <br />
+        <div id="curve_chart" style="width: 900px; height: 500px"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -163,14 +168,35 @@
     <script src="node_modules/formBuilder/dist/form-render.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
+        function drawChart(x, y) {
+            let gdata = [['Minute', 'Relative Result']]
+            for(let i = 0; i < x.length; ++i) {
+                gdata.push([x[i], y[i]]);
+            }
+            var data = google.visualization.arrayToDataTable(gdata);
+
+            var options = {
+                title: 'Performance by the minute',
+                curveType: 'function',
+                legend: {
+                    position: 'bottom'
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+
         function ytSubmit() {
             let req = {
                 category: $('#select-1557103127417 option:selected').val(),
                 country: $('#select-1557104728295 option:selected').val(),
                 target: $("input:radio[name ='radio-group-1557103310289']:checked").val(),
-                month: $( "#number-update" ).val(),
-                day: $( "#number-upday" ).val(),
-                duration: 60*60*$( "#number-1557105132142" ).val() + 60*$( "#number-1557105306098" ).val() + 1*$( "#number-1557105342303" ).val(),
+                month: $("#number-update").val(),
+                day: $("#number-upday").val(),
+                duration: 60 * 60 * $("#number-1557105132142").val() + 60 * $("#number-1557105306098").val() + 1 *
+                    $("#number-1557105342303").val(),
             }
             // $.ajax({
             //     type: 'POST',
@@ -184,10 +210,19 @@
                 method: 'post',
                 url: "http://127.0.0.1:5000",
                 data: req,
-            }).then(function(data) {
-                // console.log(data.data);
+            }).then(function (data) {
+                console.log(data.data);
+                let dicc = data.data;
+                // let dicc = JSON.parse(data.data);
+                // console.log(dicc);
                 $('#resulttime2').text('The recommended upload time for your video is:');
-                $('#resulttime').text(data.data);
+                $('#resulttime').text(dicc['best']);
+
+                google.charts.load('current', {
+                    'packages': ['corechart']
+                });
+                google.charts.setOnLoadCallback(() => {return drawChart(dicc['x'], dicc['y'])});
+
             });
         }
         $('#rendered-form').submit(ytSubmit);

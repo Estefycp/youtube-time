@@ -26,7 +26,8 @@ def root():
     model, scaler = models[req['country']][req['target']]
     Y = predictions.predict_batch(model, scaler, X)
     # print(Y)
-    return best_rules.get_best(X, Y, req['target'])
+    best, graph =  best_rules.get_best(X, Y, req['target'])
+    return best + '\n' + str(graph)
     # bX, bY = best_rules.get_best(X, Y, req['target'])
 
     # result = ''
