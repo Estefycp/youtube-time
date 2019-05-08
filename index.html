@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+    .small-middle-container {
+        margin: auto;
+        width: 40%;
+    }
+
+    body {
+        background-color: #faebe8;
+    }
+
+    h1 {
+        color: #cd201f;
+    }
+</style>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="small-middle-container">
+        <h1 style="text-align:center">Youtube Time</h1>
+        <br>
+        <br>
+        <form id="rendered-form" action="javascript:void(0);">
+            <div class="rendered-form ">
+                <div class="fb-select form-group field-select-1557103127417  row"><label for="select-1557103127417"
+                        class="fb-select-label ">Select Category<span class="fb-required">*</span><span
+                            class="tooltip-element"
+                            tooltip="This is the categorie that your video will belong to ">?</span></label><select
+                        class="form-control btn-danger " name="select-1557103127417" id="select-1557103127417"
+                        required="required" aria-required="true">
+                        <option value="1" id="select-1557103127417-0">Film &amp; Animation</option>
+                        <option value="2" id="select-1557103127417-1">Autos &amp; Vehicles</option>
+                        <option value="3" id="select-1557103127417-2">Music</option>
+                        <option value="4" id="select-1557103127417-3">Pets &amp; Animals</option>
+                        <option value="5" id="select-1557103127417-4">Sports</option>
+                        <option value="6" id="select-1557103127417-5">Short Movies</option>
+                        <option value="7" id="select-1557103127417-6">Travel &amp; Events</option>
+                        <option value="8" id="select-1557103127417-7">Gaming</option>
+                        <option value="9" id="select-1557103127417-8">Videoblogging</option>
+                        <option value="10" id="select-1557103127417-9">People &amp; Blogs</option>
+                        <option value="11" id="select-1557103127417-10">Comedy</option>
+                        <option value="12" id="select-1557103127417-11">Entertainment</option>
+                        <option value="13" id="select-1557103127417-12">News &amp; Politics</option>
+                        <option value="14" id="select-1557103127417-13">Howto &amp; Style</option>
+                        <option value="15" id="select-1557103127417-14">Education</option>
+                        <option value="16" id="select-1557103127417-15">Science &amp; Technology</option>
+                        <option value="17" id="select-1557103127417-16">Nonprofits &amp; Activism</option>
+                        <option value="18" id="select-1557103127417-17">Movies</option>
+                        <option value="19" id="select-1557103127417-18">Anime/Animation</option>
+                        <option value="20" id="select-1557103127417-19">Action/Adventure</option>
+                        <option value="21" id="select-1557103127417-20">Classics</option>
+                        <option value="22" id="select-1557103127417-21">Comedy</option>
+                        <option value="23" id="select-1557103127417-22">Documentary</option>
+                        <option value="24" id="select-1557103127417-23">Drama</option>
+                        <option value="25" id="select-1557103127417-24">Family</option>
+                        <option value="26" id="select-1557103127417-25">Foreign</option>
+                        <option value="27" id="select-1557103127417-26">Horror</option>
+                        <option value="28" id="select-1557103127417-27">Sci-Fi/Fantasy</option>
+                        <option value="29" id="select-1557103127417-28">Thriller</option>
+                        <option value="30" id="select-1557103127417-29">Shorts</option>
+                        <option value="31" id="select-1557103127417-30">Shows</option>
+                        <option value="32" id="select-1557103127417-31">Trailers</option>
+                    </select></div>
+                <div class="fb-select form-group field-select-1557104728295 row">
+                    <label for="select-1557104728295" class="fb-select-label">Select Region<span
+                            class="fb-required">*</span>
+                        <span class="tooltip-element"
+                            tooltip="This is the categorie that your video will belong to ">?</span>
+                    </label><select class="form-control btn-danger " name="select-1557104728295"
+                        id="select-1557104728295" required="required" aria-required="true">
+                        <option value="US" id="select-1557104728295-0">United States</option>
+                        <option value="CA" id="select-1557104728295-1">Canada</option>
+                        <option value="DE" id="select-1557104728295-2">Alemania</option>
+                        <!-- <option value="JP" id="select-1557104728295-3">Japon</option> -->
+                        <!-- <option value="KR" id="select-1557104728295-4">Corea del sur</option> -->
+                        <!-- <option value="MX" id="select-1557104728295-5">Mexico</option> -->
+                        <!-- <option value="RU" selected="true" id="select-1557104728295-6">Rusia</option> -->
+                        <option value="FR" id="select-1557104728295-7">Francia</option>
+                        <option value="GB" id="select-1557104728295-8">Reino Unido</option>
+                        <!-- <option value="IN" id="select-1557104728295-9">India</option> -->
+                    </select></div>
+                <div class="fb-radio-group form-group field-radio-group-1557103310289 row "><label
+                        for="radio-group-1557103310289" class="fb-radio-group-label ">Target<span
+                            class="fb-required">*</span><span class="tooltip-element"
+                            tooltip="Cuál es tu objetivo? ">?</span></label>
+                    <div class="radio-group">
+                        <div class="fb-radio"><input name="radio-group-1557103310289" id="radio-group-1557103310289-0"
+                                required="required" aria-required="true" value="like_rate" type="radio" checked><label
+                                for="radio-group-1557103310289-0">Likes</label></div>
+                        <div class="fb-radio"><input name="radio-group-1557103310289" id="radio-group-1557103310289-1"
+                                required="required" aria-required="true" value="views" type="radio"><label
+                                for="radio-group-1557103310289-1">Views</label></div>
+                        <div class="fb-radio"><input name="radio-group-1557103310289" id="radio-group-1557103310289-2"
+                                required="required" aria-required="true" value="time_to_trending" type="radio"><label
+                                for="radio-group-1557103310289-2">Trending</label></div>
+                        <div class="fb-radio"><input name="radio-group-1557103310289" id="radio-group-1557103310289-3"
+                                required="required" aria-required="true" value="dislike_rate" type="radio"><label
+                                for="radio-group-1557103310289-3">Dislikes</label></div>
+                        <div class="fb-radio"><input name="radio-group-1557103310289" id="radio-group-comments-3"
+                                required="required" aria-required="true" value="comment_rate" type="radio"><label
+                                for="radio-group-comments-3">Comments</label></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 id="control-4270250">Video Length</h2>
+                    <div class="col-md-3 fb-number form-group field-number-1557105132142 "><label
+                            for="number-1557105132142" class="fb-number-label ">Hours<span
+                                class="fb-required">*</span></label><input type="number" placeholder="Hours"
+                            class="form-control btn-danger" name="number-1557105132142" value="0" min="0" max="99"
+                            id="number-1557105132142" required="required" aria-required="true"></div>
+                    <div class=" col-md-3 fb-number form-group field-number-1557105306098"><label
+                            for="number-1557105306098" class="fb-number-label">Minutes<span
+                                class="fb-required">*</span></label><input type="number" placeholder="Minutes"
+                            class="form-control btn-danger" name="number-1557105306098" value="0" min="0" max="59"
+                            id="number-1557105306098" required="required" aria-required="true"></div>
+                    <div class="col-md-3 fb-number form-group field-number-1557105342303"><label
+                            for="number-1557105342303" class="fb-number-label">Seconds<span
+                                class="fb-required">*</span></label><input type="number" placeholder="Seconds"
+                            class="form-control btn-danger" name="number-1557105342303" value="0" min="0" max="59"
+                            id="number-1557105342303" required="required" aria-required="true"></div>
+                </div>
+
+                <div class="row">
+                    <h2 id="control-update">Upload Day</h2>
+                    <div class="col-md-3 fb-number form-group field-number-1557105132142 "><label for="number-update"
+                            class="fb-number-label ">Month<span class="fb-required">*</span></label><input type="number"
+                            placeholder="Month" class="form-control btn-danger" name="number-update" value="1" min="1"
+                            max="12" id="number-update" required="required" aria-required="true" id="number-update-txt"></div>
+                    <div class=" col-md-3 fb-number form-group field-number-1557105306098"><label for="number-upday"
+                            class="fb-number-label">Day Number<span class="fb-required">*</span></label><input
+                            type="number" placeholder="Day" class="form-control btn-danger" name="number-upday"
+                            value="1" min="1" max="31" id="number-upday" required="required" aria-required="true" id="number-upday-txt"></div>
+                </div>
+                <form id="rendered-form">
+                    <div class="rendered-form">
+                        <div class="fb-button form-group field-submitbtn"><button type="submit" class="btn-danger btn"
+                                name="submitbtn" id="submitbtn" >Submit</button></div>
+                    </div>
+                </form>
+            </div>
+        </form>
+        <h2 style="text-align:center" id="resulttime2"></h2>
+        <br />
+        <h1 style="text-align:center" id="resulttime"></h1>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="node_modules/formBuilder/dist/form-render.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function ytSubmit() {
+            let req = {
+                category: $('#select-1557103127417 option:selected').val(),
+                country: $('#select-1557104728295 option:selected').val(),
+                target: $("input:radio[name ='radio-group-1557103310289']:checked").val(),
+                month: $( "#number-update" ).val(),
+                day: $( "#number-upday" ).val(),
+                duration: 60*60*$( "#number-1557105132142" ).val() + 60*$( "#number-1557105306098" ).val() + 1*$( "#number-1557105342303" ).val(),
+            }
+            // $.ajax({
+            //     type: 'POST',
+            //     url: "http://192.168.1.70:5000",
+            //     dataType: "json",
+            //     data: JSON.stringify(req),
+            // }).then(function(data) {
+            //     $('#resulttime').text = data;
+            // });
+            axios({
+                method: 'post',
+                url: "http://127.0.0.1:5000",
+                data: req,
+            }).then(function(data) {
+                // console.log(data.data);
+                $('#resulttime2').text('The recommended upload time for your video is:');
+                $('#resulttime').text(data.data);
+            });
+        }
+        $('#rendered-form').submit(ytSubmit);
+    </script>
+    <!-- <script>
+        jQuery($ => {
+            $('.build-wrap').formBuilder()
+        })
+    </script> -->
+</body>
+
+</html>
