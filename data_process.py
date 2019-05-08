@@ -10,6 +10,8 @@ import isodate
 
 def get_country_df(country):
     videos = pd.read_csv('./data/' + country + 'videos.csv')
+    videos = videos[videos['comments_disabled'] == False]
+    videos = videos[videos['ratings_disabled'] == False]
     videos['likes_log'] = np.log(videos['likes'] + 1)
     videos['views_log'] = np.log(videos['views'] + 1)
     videos['dislikes_log'] = np.log(videos['dislikes'] + 1)
@@ -83,8 +85,8 @@ def get_country_df(country):
 def getX_y(country, targets):
     df = get_country_df(country)
     user_ins = [
-        'comments_disabled',
-        'ratings_disabled',
+        # 'comments_disabled',
+        # 'ratings_disabled',
         '2_category',
         '10_category', '15_category', '17_category', '19_category',
         '20_category', '22_category', '23_category', '24_category',
