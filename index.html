@@ -29,10 +29,10 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
     <div class="small-middle-container">
         <h1 style="text-align:center">Youtube Time</h1>
+        <br>
+        <br>
         <form id="rendered-form" action="javascript:void(0);">
             <div class="rendered-form ">
                 <div class="fb-select form-group field-select-1557103127417  row"><label for="select-1557103127417"
@@ -152,6 +152,8 @@
                 </form>
             </div>
         </form>
+        <h2 style="text-align:center" id="resulttime2"></h2>
+        <br />
         <h1 style="text-align:center" id="resulttime"></h1>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -159,6 +161,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script src="node_modules/formBuilder/dist/form-render.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         function ytSubmit() {
             let req = {
@@ -169,12 +172,22 @@
                 day: $( "#number-upday" ).val(),
                 duration: 60*60*$( "#number-1557105132142" ).val() + 60*$( "#number-1557105306098" ).val() + 1*$( "#number-1557105342303" ).val(),
             }
-            $.ajax({
+            // $.ajax({
+            //     type: 'POST',
+            //     url: "http://192.168.1.70:5000",
+            //     dataType: "json",
+            //     data: JSON.stringify(req),
+            // }).then(function(data) {
+            //     $('#resulttime').text = data;
+            // });
+            axios({
+                method: 'post',
                 url: "http://192.168.1.70:5000",
-                dataType: "json",
                 data: req,
             }).then(function(data) {
-                $('#resulttime').text = data;
+                // console.log(data.data);
+                $('#resulttime2').text('The recommended upload time for your video is:');
+                $('#resulttime').text(data.data);
             });
         }
         $('#rendered-form').submit(ytSubmit);
