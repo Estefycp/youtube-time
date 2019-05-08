@@ -6,6 +6,7 @@ flask run
 '''
 
 from flask import Flask, jsonify, make_response, request, render_template, Response
+from flask_cors import CORS
 import os
 
 import models_build
@@ -13,8 +14,9 @@ import predictions
 import best_rules
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def root():
     req       = request.json
     res       = {}
